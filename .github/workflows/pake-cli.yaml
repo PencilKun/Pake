@@ -14,6 +14,9 @@ on:
       url:
         description: '[URL]'
         required: true
+      agent:
+        description: '[User-Agent]'
+        required: false
       name:
         description: '[Name]'
         required: true
@@ -121,6 +124,7 @@ jobs:
         env:
           URL: ${{ inputs.url }}
           NAME: ${{ inputs.name }}
+          AGENT: ${{ inputs.agent }}
           ICON: ${{ inputs.icon }}
           HEIGHT: ${{ inputs.height }}
           WIDTH: ${{ inputs.width }}
