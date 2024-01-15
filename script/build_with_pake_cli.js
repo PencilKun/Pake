@@ -10,6 +10,7 @@ console.log('\n=======================\n');
 console.log('Pake parameters is: ');
 console.log('url: ', process.env.URL);
 console.log('name: ', process.env.NAME);
+console.log('name: ', process.env.AGENT);
 console.log('icon: ', process.env.ICON);
 console.log('height: ', process.env.HEIGHT);
 console.log('width: ', process.env.WIDTH);
@@ -21,6 +22,9 @@ console.log('===========================\n');
 
 cd('node_modules/pake-cli');
 let params = `node cli.js ${process.env.URL} --name ${process.env.NAME} --height ${process.env.HEIGHT} --width ${process.env.WIDTH}`;
+if (process.env.AGENT === 'true') {
+  params = `${params} --user-agent ${process.env.AGENT}`;
+}
 
 if (process.env.TRANSPARENT === 'true') {
   params = `${params} --transparent`;
